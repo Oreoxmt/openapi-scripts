@@ -1,0 +1,22 @@
+{
+  "name": "openapi-scripts",
+  "version": "1.0.0",
+  "description": "Scripts used in postprocess OpenAPI document",
+  "main": "src/main.js",
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oreoxmt/openapi-scripts.git"
+  },
+  "author": "Oreoxmt",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Oreoxmt/openapi-scripts/issues"
+  },
+  "homepage": "https://github.com/Oreoxmt/openapi-scripts#readme",
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "commander": "^9.3.0"
+  }
+}
