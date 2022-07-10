@@ -1,4 +1,5 @@
 FROM node:16
+WORKDIR /app
 COPY package.json yarn.lock ./src/ .
 RUN yarn install
-ENTRYPOINT ["node", "main.js"]
+ENTRYPOINT ["node", "/app/main.js"]
