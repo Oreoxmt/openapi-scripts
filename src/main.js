@@ -10,7 +10,7 @@ program
 program.command("deref")
     .description("Use $RefParser to dereference a JSON schema")
     .argument("<in-filename>", "Input JSON file")
-    .argument("<out-filename>", "Output JSON file")
+    .argument("[out-filename]", "Output JSON file")
     .action(deref);
 
 program.parse();

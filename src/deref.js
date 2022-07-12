@@ -2,6 +2,9 @@ const fs = require("fs");
 const $RefParser = require("@apidevtools/json-schema-ref-parser");
 
 async function deref(readf, writef) {
+    if (writef === undefined) {
+        writef = readf;
+    }
     const data = fs.readFileSync(readf, 'utf8');
     const schema = await $RefParser.dereference(JSON.parse(data));
     fs.writeFileSync(writef, JSON.stringify(schema, null, 2));
