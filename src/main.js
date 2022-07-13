@@ -1,6 +1,7 @@
 const { Command } = require("commander");
 
 const deref = require("./deref.js");
+const importMd = require("./importmd.js");
 
 const program = new Command();
 program
@@ -12,5 +13,10 @@ program.command("deref")
     .argument("<in-filename>", "Input JSON file")
     .argument("<out-filename>", "Output JSON file")
     .action(deref);
+program.command("importMd")
+    .description("Add a markdown $Ref to JSON info.description")
+    .argument("<in-filename>", "Target JSON file")
+    .argument("<path>", "markdown path to ref")
+    .action(importMd);
 
 program.parse();
