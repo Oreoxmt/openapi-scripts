@@ -9,6 +9,10 @@ ToDo
 ### Convert string to int for int32 type in `.proto`
 ToDo
 
+### Import markown files
+
+Embed external Markdown file contents to the `info.description` auto-generated JSON file. See [Redoc documentation](https://redocly.com/docs/api-reference-docs/guides/embedded-markdown/) for more information.
+
 ### Add x-logo
 
 [`x-logo`](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md#x-logo) is a [vendor extension](https://swagger.io/specification/#specificationExtensions) from Redoc. It allows you to show a custom logo on the left upper corner of your redoc output.
