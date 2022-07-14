@@ -2,6 +2,7 @@ const { Command } = require("commander");
 
 const deref = require("./deref.js");
 const importMd = require("./importmd.js");
+const addLogo = require("./addlogo.js");
 
 const program = new Command();
 program
@@ -18,5 +19,12 @@ program.command("importMd")
     .argument("<in-filename>", "Target JSON file")
     .argument("<path>", "markdown path to ref")
     .action(importMd);
+program.command("addLogo")
+    .description("Add a logo to JSON info.x-logo")
+    .argument("<in-filename>", "Target JSON file")
+    .argument("<url>", "Logo absolute url")
+    .argument("<alt>", "Logo alt text")
+    .argument("<href>", "Logo href")
+    .action(addLogo);
 
 program.parse();
