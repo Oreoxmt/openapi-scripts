@@ -8,3 +8,7 @@ Use [@apidevtools/json-schema-ref-parser](https://github.com/APIDevTools/json-sc
 ToDo
 ### Convert string to int for int32 type in `.proto`
 ToDo
+
+### Add x-logo
+
+[`x-logo`](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md#x-logo) is a [vendor extension](https://swagger.io/specification/#specificationExtensions) from Redoc. It allows you to show a custom logo on the left upper corner of your redoc output.
