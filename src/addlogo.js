@@ -4,7 +4,6 @@ function addLogo(file, url, alt, href) {
   const schema = JSON.parse(fs.readFileSync(file, 'utf8'));
   schema["info"]["x-logo"] = {
       "url": url,
-      "backgroundColor": "#FFFFFF",
       "altText": alt,
       "href": href,
   };
