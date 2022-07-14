@@ -15,9 +15,10 @@ program.command("deref")
     .argument("[out-filename]", "Output JSON file. If not specified, use in-filename.")
     .action(deref);
 program.command("importmd")
-    .description("Add a markdown $Ref to JSON info.description")
+    .description("Merge markdown files in <md-folder> to a markdown <gen-file>, and import it as $ref to JSON info.description.")
     .argument("<in-filename>", "Target JSON file")
-    .argument("<path>", "markdown path to ref")
+    .argument("<md-folder>", "Folder of markdown files to import")
+    .argument("<gen-md>", "Merged markdown files")
     .action(importMd);
 program.command("addlogo")
     .description("Add a logo to JSON info.x-logo")
