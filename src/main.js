@@ -8,7 +8,7 @@ const program = new Command();
 program
     .name("postprocess")
     .description("Postprocess an OpenAPI document for ReDoc")
-    .version("0.1.0");
+    .version("0.3.0");
 program.command("deref")
     .description("Use $RefParser to dereference a JSON schema")
     .argument("<in-filename>", "Input JSON file")
