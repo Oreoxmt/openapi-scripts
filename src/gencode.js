@@ -16,7 +16,7 @@ async function genSampleCode(file) {
                 openApi.paths[path][method]['x-code-samples'] = samples;
                 snippets.snippets.forEach(snippet => {
                     samples.push({
-                        lang: snippet.title.split(' ')[0],
+                        lang: snippet.id.split('_')[1],
                         source: snippet.content
                     })
                 })
