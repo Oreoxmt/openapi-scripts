@@ -17,6 +17,7 @@
   "homepage": "https://github.com/Oreoxmt/openapi-scripts#readme",
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
-    "commander": "^9.3.0"
+    "commander": "^9.3.0",
+    "openapi-snippet": "^0.14.0"
   }
 }

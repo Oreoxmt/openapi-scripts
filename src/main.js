@@ -3,7 +3,7 @@ const { Command } = require("commander");
 const deref = require("./deref.js");
 const importMd = require("./importmd.js");
 const addLogo = require("./addlogo.js");
-
+const genSampleCode = require("./gencode.js");
 const program = new Command();
 program
     .name("postprocess")
@@ -27,5 +27,8 @@ program.command("addlogo")
     .argument("<alt>", "Logo alt text")
     .argument("<href>", "Logo href")
     .action(addLogo);
-
+program.command("gencode")
+    .description("Generate sample code to JSON as x-code-samples")
+    .argument("<in-filename>", "Target JSON file")
+    .action(genSampleCode);
 program.parse();
