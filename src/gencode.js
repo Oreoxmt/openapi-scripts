@@ -11,7 +11,7 @@ async function genSampleCode(file) {
                 const samples = []
                 openApi.paths[path][method]['x-code-samples'] = samples;
                 snippets.snippets.forEach(snippet => {
-                    snippet.content = snippet.content.replace("curl", "curl --digest \\\n  --user 'YOUR_PUBLIC_KEY:YOUR_PRIVATE_KEY' \\\n ").replaceAll("%7B", "{").replaceAll("%7D", "}");
+                    snippet.content = snippet.content.replace("curl", "curl --digest \\\n  --user 'YOUR_PUBLIC_KEY:YOUR_PRIVATE_KEY' \\\n ").replaceAll("%7B", "{").replaceAll("%7D", "}").replaceAll('comundefined', 'com');
                     samples.push({
                         lang: snippet.id.split('_')[1],
                         source: snippet.content
