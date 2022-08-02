@@ -4,6 +4,8 @@ const deref = require("./deref.js");
 const importMd = require("./importmd.js");
 const addLogo = require("./addlogo.js");
 const genSampleCode = require("./gencode.js");
+const devTier = require("./devTier.js");
+
 const program = new Command();
 program
     .name("postprocess")
@@ -31,4 +33,8 @@ program.command("gencode")
     .description("Generate sample code to JSON as x-code-samples")
     .argument("<in-filename>", "Target JSON file")
     .action(genSampleCode);
+program.command("devtier")
+    .description("Add sample for creating a dev tier cluster")
+    .argument("<in-filename", "Target JSON file")
+    .action(devTier)
 program.parse();
