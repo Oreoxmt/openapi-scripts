@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "Scripts used in postprocess OpenAPI document",
   "main": "src/main.js",
-  "devDependencies": {},
-  "scripts": {},
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "@apidevtools/json-schema-ref-parser": "^9.0.9",
+    "commander": "^9.3.0",
+    "openapi-snippet": "^0.14.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Oreoxmt/openapi-scripts.git"
@@ -14,10 +22,5 @@
   "bugs": {
     "url": "https://github.com/Oreoxmt/openapi-scripts/issues"
   },
-  "homepage": "https://github.com/Oreoxmt/openapi-scripts#readme",
-  "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "^9.0.9",
-    "commander": "^9.3.0",
-    "openapi-snippet": "^0.14.0"
-  }
+  "homepage": "https://github.com/Oreoxmt/openapi-scripts#readme"
 }
