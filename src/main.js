@@ -5,6 +5,7 @@ const importMd = require("./importmd.js");
 const addLogo = require("./addlogo.js");
 const genSampleCode = require("./gencode.js");
 const devTier = require("./devTier.js");
+const replaceInteger = require("./replaceint.js");
 
 const program = new Command();
 program
@@ -37,4 +38,9 @@ program.command("devtier")
     .description("Add sample for creating a dev tier cluster")
     .argument("<in-filename", "Target JSON file")
     .action(devTier)
+program.command("replaceint")
+    .description("Replace the example and default value of integer type to number type")
+    .argument("<in-filename>", "Input JSON file")
+    .argument("[out-filename]", "Output JSON file. If not specified, use in-filename.")
+    .action(replaceInteger);
 program.parse();
