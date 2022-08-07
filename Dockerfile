@@ -1,5 +1,8 @@
+FROM node:16 AS build
+WORKDIR /build
+COPY . .
+RUN yarn install && yarn run build
+
 FROM node:16
-WORKDIR /app
-COPY package.json yarn.lock ./src/ .
-RUN yarn install
-ENTRYPOINT ["node", "/app/main.js"]
+COPY --from=build /build/dist/main.js ./
+ENTRYPOINT ["node", "main.js"]
