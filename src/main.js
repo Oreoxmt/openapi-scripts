@@ -6,6 +6,7 @@ const addLogo = require("./addlogo.js");
 const genSampleCode = require("./gencode.js");
 const devTier = require("./devTier.js");
 const replaceInteger = require("./replaceint.js");
+const groupTag = require("./grouptag.js");
 
 const program = new Command();
 program
@@ -43,4 +44,9 @@ program.command("replaceint")
     .argument("<in-filename>", "Input JSON file")
     .argument("[out-filename]", "Output JSON file. If not specified, use in-filename.")
     .action(replaceInteger);
+program.command("grouptag")
+    .description("Group all tags in a tag group")
+    .argument("<in-filename>", "Input JSON file")
+    .argument("<tag-group>", "Tag group name")
+    .action(groupTag);
 program.parse();
