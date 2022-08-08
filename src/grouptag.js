@@ -2,12 +2,7 @@ const fs = require("fs");
 
 function groupTag(json_file, tag_group) {
     const schema = JSON.parse(fs.readFileSync(json_file, 'utf8'));
-    const tags = [];
-
-    // iterate through schema["tags"]
-    for (let i = 0; i < schema["tags"].length; i++) {
-      tags.push(schema["tags"][i]["name"]);
-    }
+    const tags = schema["tags"].map(tag => tag["name"]);
 
     schema["x-tagGroups"] = [ {"name":tag_group, "tags": tags} ]
 
