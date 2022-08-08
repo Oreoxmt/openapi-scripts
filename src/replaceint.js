@@ -6,10 +6,10 @@ function replaceIntegerInternal(obj) {
             replaceIntegerInternal(obj[item]);
         }
         else if (item == "type" && obj[item] === "integer") {
-            if (obj["example"] != undefined && typeof (obj["example"]) != "number") {
+            if (obj["example"] != undefined && typeof obj["example"] != "number") {
                 obj["example"] = parseInt(obj["example"]);
             }
-            if (obj["default"] != undefined && typeof (obj["default"]) != "number") {
+            if (obj["default"] != undefined && typeof obj["default"] != "number") {
                 obj["default"] = parseInt(obj["default"]);
             }
         }
@@ -22,7 +22,7 @@ async function replaceInteger(readf, writef) {
     const data = JSON.parse(fs.readFileSync(readf, 'utf8'));
     const schema = replaceIntegerInternal(data);
     fs.writeFileSync(writef, JSON.stringify(schema, null, 2));
-
+    console.log(`Replace wrong string with int in ${writef}`);
 }
 
 module.exports = replaceInteger;
