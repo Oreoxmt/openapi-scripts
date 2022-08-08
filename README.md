@@ -51,3 +51,7 @@ Embed external Markdown file contents to the `info.description` auto-generated J
 ### Add `x-logo`
 
 [`x-logo`](https://github.com/Redocly/redoc/blob/master/docs/redoc-vendor-extensions.md#x-logo) is a [vendor extension](https://swagger.io/specification/#specificationExtensions) from Redoc. It allows you to show a custom logo on the left upper corner of your redoc output.
+
+### Add tag group
+
+Add an `x-tagGroups` field to the auto-generated JSON file and group all tags under that a specified tag. This field is a Redoc vendor extension. See [Redoc documentation](https://redocly.com/docs/redoc/redoc-vendor-extensions/#x-taggroups) for more information.
