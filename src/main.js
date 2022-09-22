@@ -2,9 +2,8 @@ const { Command } = require("commander");
 
 const deref = require("./deref.js");
 const importMd = require("./importmd.js");
-const addLogo = require("./addlogo.js");
 const genSampleCode = require("./gencode.js");
-const devTier = require("./devTier.js");
+const patch = require("./patch.js");
 const replaceInteger = require("./replaceint.js");
 const groupTag = require("./grouptag.js");
 
@@ -24,21 +23,16 @@ program.command("importmd")
     .argument("<md-folder>", "Folder of markdown files to import")
     .argument("<gen-md>", "Merged markdown files")
     .action(importMd);
-program.command("addlogo")
-    .description("Add a logo to JSON info.x-logo")
-    .argument("<in-filename>", "Target JSON file")
-    .argument("<url>", "Logo absolute url")
-    .argument("<alt>", "Logo alt text")
-    .argument("<href>", "Logo href")
-    .action(addLogo);
 program.command("gencode")
     .description("Generate sample code to JSON as x-code-samples")
     .argument("<in-filename>", "Target JSON file")
     .action(genSampleCode);
-program.command("devtier")
-    .description("Add sample for creating a dev tier cluster")
+program.command("patch")
+    .description("Apply JSON patch")
+    .argument("<patch-filename>", "Patch file")
     .argument("<in-filename", "Target JSON file")
-    .action(devTier)
+    .argument("[out-filename]", "Output JSON file. If not specified, use in-filename.")
+    .action(patch)
 program.command("replaceint")
     .description("Replace the example and default value of integer type to number type")
     .argument("<in-filename>", "Input JSON file")
