@@ -6,6 +6,7 @@ const genSampleCode = require("./gencode.js");
 const patch = require("./patch.js");
 const replaceInteger = require("./replaceint.js");
 const groupTag = require("./grouptag.js");
+const replaceBool = require("./replacebool.js");
 
 const program = new Command();
 program
@@ -32,7 +33,7 @@ program.command("patch")
     .argument("<patch-filename>", "Patch file")
     .argument("<in-filename", "Target JSON file")
     .argument("[out-filename]", "Output JSON file. If not specified, use in-filename.")
-    .action(patch)
+    .action(patch);
 program.command("replaceint")
     .description("Replace the example and default value of integer type to number type")
     .argument("<in-filename>", "Input JSON file")
@@ -43,4 +44,9 @@ program.command("grouptag")
     .argument("<in-filename>", "Input JSON file")
     .argument("<tag-group>", "Tag group name")
     .action(groupTag);
+program.command("replacebool")
+    .description("Remove the quotation marks around bool value")
+    .argument("<in-filename>", "Input JSON file")
+    .argument("[out-filename]", "Output JSON file. If not specified, use in-filename.")
+    .action(replaceBool);
 program.parse();
